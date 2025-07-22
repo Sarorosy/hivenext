@@ -82,7 +82,7 @@ export default function Home() {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2, ease: "easeOut" }}
-      className="w-full h-screen overflow-hidden"
+      className="w-full h-screen overflow-hidden mt-2"
     >
       <img
         src="/hero.jpg"

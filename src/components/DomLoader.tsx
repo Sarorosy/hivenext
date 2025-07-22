@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const words = [
-  "Contact Us.",
-  "Book Now.",
-  "Enquire Today.",
-  "Get in Touch.",
-  "Schedule a Call.",
-  "Let's Collaborate.",
+  "Architects.",
+  "Graphic Designers.",
+  "Interior Designers.",
+  "Model Makers.",
+  "Project Managers.",
+  "Retail Planners.",
 ];
 
 interface DomLoaderProps {
