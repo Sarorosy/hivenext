@@ -7,11 +7,12 @@ import Image from "next/image";
 export default function Header() {
   const router = useRouter();
   const [infoOpen, setInfoOpen] = useState(false);
-  const infoRef = useRef(null);
+  const infoRef = useRef<HTMLDivElement | null>(null);
+
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (infoRef.current && !infoRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (infoRef.current && !infoRef.current.contains(event.target as Node)) {
         setInfoOpen(false);
       }
     };
@@ -19,6 +20,7 @@ export default function Header() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
 
   return (
     <header className="bg-white text-[#092e46] relative z-50">
@@ -29,8 +31,8 @@ export default function Header() {
           onClick={() => router.push("/")}
         >
           <Image src="/logo-black.jpg" alt="Logo" className="h-10 w-auto" width={160} // use the actual image width
-  height={40} // or whatever height fits
-  unoptimized />
+            height={40} // or whatever height fits
+            unoptimized />
         </h1>
 
         {/* Navbar Items */}
