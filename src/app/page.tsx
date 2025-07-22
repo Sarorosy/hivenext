@@ -1,3 +1,5 @@
+import Branches from "@/components/Branches";
+import FlexDescription from "@/components/FlexDescription";
 import { Globe } from "@/components/magicui/globe";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import RingImage from "@/components/RingImage";
@@ -23,6 +25,8 @@ export default function Home() {
       <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
     </div>
     <RingImage />
+    <FlexDescription />
+    <Branches />
     
     <div className="w-full h-screen">
 
