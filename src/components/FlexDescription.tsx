@@ -5,10 +5,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import React, { PropsWithChildren, HTMLAttributes } from "react";
 import { BoxReveal } from "@/components/magicui/box-reveal";
-
+import { SparklesText } from "@/components/magicui/sparkles-text";
 import { cn } from "@/lib/utils";
 import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
- 
+ import { BorderBeam } from "./magicui/border-beam";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -35,9 +35,11 @@ function Button({ children, ...props }: PropsWithChildren<HTMLAttributes<HTMLBut
   return (
     <button
       {...props}
-      className="mt-10 px-6 py-3 rounded bg-indigo-600 text-white hover:bg-indigo-700 transition"
+      className="mt-10 px-6 py-3 rounded bg-indigo-600 text-white hover:bg-indigo-700 transition cursor-pointer "
     >
+      <SparklesText>
       {children}
+      </SparklesText>
     </button>
   );
 }
@@ -92,7 +94,7 @@ export default function FlexDescription() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="text-3xl font-bold mb-8 text-center"
       >
-        Why Choose The Hive Flex?
+        Why Choose The Hive?
       </motion.h2>
       <div className="grid md:grid-cols-3 gap-8 w-full max-w-5xl">
         {features.map((f, i) => (
@@ -101,8 +103,9 @@ export default function FlexDescription() {
            boxColor={"#000000ff"} duration={i == 0 ? 0.5 : i == 1 ? 0.7 : 0.9}>
           <Card
             
-            className="feature-card p-6 rounded-xl shadow-lg bg-white/90 dark:bg-zinc-900/90"
+            className="feature-card p-6 rounded-xl shadow-lg bg-white/90 dark:bg-zinc-900/90 relative"
           >
+            <BorderBeam duration={8} size={100} />
             <motion.h3
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
@@ -117,7 +120,9 @@ export default function FlexDescription() {
           </BoxReveal>
         ))}
       </div>
-      <Button className="mt-10">Explore Memberships</Button>
+      <Button className="mt-10">
+        
+        Explore Memberships</Button>
     </section>
   );
 }

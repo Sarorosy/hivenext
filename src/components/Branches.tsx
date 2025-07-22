@@ -120,7 +120,7 @@ const Branches = () => {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden py-20 ">
+    <div className="relative w-full overflow-hidden py-8 cstd">
 
       <div
         className="relative w-full max-w-6xl mx-auto z-10 bg-white p-6 rounded-lg border border-gray-200 shadow-md"
