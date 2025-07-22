@@ -12,7 +12,11 @@ import RingImage from "@/components/RingImage";
 import SlideText from "@/components/SlideText";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { GoogleGeminiEffectDemo } from "@/components/GeminiEffect";
-
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
+import Members from "@/components/Members";
+import Testimonials from "@/components/Testimonials";
+import BookToor from "@/components/BookToor";
+import {motion} from 'framer-motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,13 +78,18 @@ export default function Home() {
   return (
     <>
       <SlideText word="We do social space" />
-      <div className="w-full h-screen">
-        <img
-          src="/hero.jpg"
-          alt="Hero Image"
-          className="w-full h-full object-cover"
-        />
-      </div>
+     <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+      className="w-full h-screen overflow-hidden"
+    >
+      <img
+        src="/hero.jpg"
+        alt="Hero Image"
+        className="w-[99%] mx-auto h-full object-cover rounded-xl shadow-2xl"
+      />
+    </motion.div>
 
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
         <VelocityScroll>Flexible Workspace Solutions |</VelocityScroll>
@@ -126,7 +135,41 @@ export default function Home() {
       </div>
       <GoogleGeminiEffectDemo />
 
-      <div ref={postGeminiRef} className="w-full h-screen"></div>
+
+      <div
+        ref={postGeminiRef}
+        className="mx-auto max-w-6xl px-4 py-20 flex flex-col md:flex-row items-center gap-12"
+      >
+        {/* Left Content */}
+        <div className="md:w-1/2 text-center md:text-left">
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900 leading-tight">
+            The best way to grow is to{" "}
+            <PointerHighlight>
+              <span className="text-blue-600">collaborate</span>
+            </PointerHighlight>
+          </h2>
+          <p className="mt-6 text-lg text-gray-600">
+            Looking for <span className="font-semibold">Hot/Dedicated Desks</span>?
+          </p>
+
+          <button className="mt-6 inline-block bg-black text-white px-4 py-2 rounded-full font-medium hover:bg-blue-700 transition">
+            Enquire Now
+          </button>
+        </div>
+
+        {/* Right Image */}
+        <div className="md:w-1/2 w-full rounded-2xl overflow-hidden shadow-lg">
+          <img
+            src="/desks.jpg"
+            alt="Desks Image"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+      <Members />
+      <Testimonials />
+      <BookToor />
+
     </>
   );
 }
