@@ -12,8 +12,8 @@ import {
 
 import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/magicui/dot-pattern";
- import { MorphingText } from "@/components/magicui/morphing-text";
- 
+import { MorphingText } from "@/components/magicui/morphing-text";
+
 const texts = [
   "Contact Us",
   "Book Now",
@@ -63,24 +63,26 @@ const BookToor: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white to-blue-50 px-4 py-14 md:px-10 relative overflow-hidden z-10">
-         <DotPattern
-  width={20}
-  height={20}
-  cx={1}
-  cy={1}
-  cr={1}
-  className={cn(
-    "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 opacity-30",
-    "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]"
-  )}
-/>
+    <div
+    id="contactForm"
+    className="min-h-screen bg-gradient-to-br from-white to-blue-50 px-4 py-14 md:px-10 relative overflow-hidden z-10">
+      <DotPattern
+        width={20}
+        height={20}
+        cx={1}
+        cy={1}
+        cr={1}
+        className={cn(
+          "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 opacity-30",
+          "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]"
+        )}
+      />
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start z-50">
         {/* Contact Info */}
         <div className="space-y-6">
           <h2 className="text-4xl font-extrabold text-gray-800 mb-2">
-           <MorphingText texts={texts} />
+            <MorphingText texts={texts} />
           </h2>
           <p className="text-lg text-gray-600">
             We'd love to show you around our collaborative workspaces.

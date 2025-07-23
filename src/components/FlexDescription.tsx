@@ -8,7 +8,7 @@ import { BoxReveal } from "@/components/magicui/box-reveal";
 import { SparklesText } from "@/components/magicui/sparkles-text";
 import { cn } from "@/lib/utils";
 import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
- import { BorderBeam } from "./magicui/border-beam";
+import { BorderBeam } from "./magicui/border-beam";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -38,7 +38,7 @@ function Button({ children, ...props }: PropsWithChildren<HTMLAttributes<HTMLBut
       className="mt-10 px-6 py-3 rounded bg-indigo-600 text-white hover:bg-indigo-700 transition cursor-pointer "
     >
       <SparklesText>
-      {children}
+        {children}
       </SparklesText>
     </button>
   );
@@ -98,30 +98,32 @@ export default function FlexDescription() {
       </motion.h2>
       <div className="grid md:grid-cols-3 gap-8 w-full max-w-5xl">
         {features.map((f, i) => (
-           <BoxReveal
-           key={f.title}
-           boxColor={"#000000ff"} duration={i == 0 ? 0.5 : i == 1 ? 0.7 : 0.9}>
-          <Card
-            
-            className="feature-card p-6 rounded-xl shadow-lg bg-white/90 dark:bg-zinc-900/90 relative"
-          >
-            <BorderBeam duration={8} size={100} />
-            <motion.h3
-              initial={{ scale: 0.8, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 * i, duration: 0.5 }}
-              className="font-semibold text-xl mb-2"
+          <BoxReveal
+            key={f.title}
+            boxColor={"#000000ff"} duration={i == 0 ? 0.5 : i == 1 ? 0.7 : 0.9}>
+            <Card
+
+              className="feature-card p-6 rounded-xl shadow-lg bg-white/90 dark:bg-zinc-900/90 relative"
             >
-              {f.title}
-            </motion.h3>
-            <p className="text-zinc-600 dark:text-zinc-200">{f.desc}</p>
-          </Card>
+              <BorderBeam duration={8} size={100} />
+              <motion.h3
+                initial={{ scale: 0.8, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 * i, duration: 0.5 }}
+                className="font-semibold text-xl mb-2"
+              >
+                {f.title}
+              </motion.h3>
+              <p className="text-zinc-600 dark:text-zinc-200">{f.desc}</p>
+            </Card>
           </BoxReveal>
         ))}
       </div>
-      <Button className="mt-10">
-        
+      <Button className="mt-10" onClick={() => {
+        window.location.href = "#contactForm";
+      }}>
+
         Explore Memberships</Button>
     </section>
   );

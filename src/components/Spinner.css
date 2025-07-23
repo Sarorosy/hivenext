@@ -1,0 +1,301 @@
+/* Custom CSS replacing Tailwind classes */
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff;
+    gap: 80px;
+    user-select: none;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    padding: 20px;
+}
+
+.sidebar h1.small {
+    font-size: 14px;
+    color: black;
+    margin: 0 0 10px 0;
+}
+
+.sidebar h1.large {
+    font-size: 24px;
+    color: black;
+    margin: 0;
+}
+
+.sidebar.left h1 {
+    text-align: right;
+}
+
+.sidebar.right h1 {
+    text-align: left;
+}
+
+.gallery-main {
+    width: 620px;
+    min-height: 700px;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    perspective: 1000px;
+}
+
+.gallery-center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    min-width: 250px;
+    backdrop-filter: blur(5px);
+}
+
+.gallery-center-content h2 {
+    font-size: 24px;
+    color: #333;
+    margin: 0 0 15px 0;
+    font-weight: 600;
+}
+
+.gallery-center-content .center-image {
+    width: auto;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0 auto 15px auto;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-center-content p {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+    font-weight: 500;
+}
+
+.gallery-navigation {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+}
+
+.nav-button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button:hover {
+    background: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-button:active {
+    transform: translateY(0);
+}
+
+.gallery-item {
+    width: 200px;
+    background-color: #f3f4f6;
+    position: absolute;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    z-index: 1;
+    transform: scale(0.7) rotateY(60deg) rotateX(30deg);
+    transition: none;
+}
+
+.gallery-item.active {
+    opacity: 1;
+    z-index: 2;
+    transform: none;
+}
+
+.gallery-item h1 {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    margin: 0 0 15px 0;
+}
+
+.gallery-item img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+.gallery-item p {
+    font-size: 14px;
+    color: black;
+    text-align: center;
+    margin: 0;
+}
+
+/* 3D Circle Gallery Styles */
+.mdw-3d-circle-gallery-area {
+    --radius: 250;
+    --mobile-radius: 140;
+    --repeat: 8;
+    --drag-speed: 3;
+}
+
+.mdw-3d-circle-gallery-area.anim .gallery-item {
+    transition: all 0.25s ease-in-out;
+}
+
+.mdw-3d-circle-gallery-area.hovering .gallery-item {
+    transition: none;
+}
+
+.mdw-3d-circle-gallery-circle {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 30px;
+    perspective: 1000px;
+}
+
+.mdw-3d-circle-gallery-circle img {
+    height: 100%;
+    width: 100%;
+    background: #b0b0b0;
+    object-fit: cover;
+    position: absolute;
+    transform: translate(var(--x, 0), var(--y, 0)) rotateX(0deg) rotateY(var(--r, 0deg));
+    opacity: var(--o);
+    border-radius: 5px;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+}
+
+.mdw-3d-circle-gallery-circle img.active {
+    transform: translate(var(--x, 0), var(--y, 0)) rotateX(0deg) rotateY(var(--r, 0deg)) scale(1.2);
+}
+
+.mdw-3d-circle-gallery-area.dragging .mdw-3d-circle-gallery-circle img {
+    transition: none;
+}
+
+.mdw-3d-circle-gallery-area p {
+    margin-bottom: 0;
+}
+
+.mdw-3d-circle-gallery-area a:focus {
+    outline: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .gallery-container {
+        gap: 40px;
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 300px;
+    }
+
+    .gallery-main {
+        width: 400px;
+        min-height: 500px;
+        position: relative;
+    }
+
+    .gallery-center-content {
+        padding: 20px;
+        min-width: 200px;
+    }
+
+    .gallery-center-content .center-image {
+        width: auto;
+        height: 140px;
+    }
+}
+
+@media (max-width: 767px) {
+    .mdw-3d-circle-gallery-circle {
+        width: 30px;
+        height: 18px;
+    }
+
+    .gallery-container {
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .sidebar {
+        width: 250px;
+    }
+
+    .gallery-main {
+        width: 300px;
+        min-height: 400px;
+        position: relative;
+    }
+
+    .gallery-center-content {
+        padding: 15px;
+        min-width: 180px;
+    }
+
+    .gallery-center-content h2 {
+        font-size: 18px;
+    }
+
+    .gallery-center-content .center-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .gallery-navigation {
+        bottom: 20px;
+        gap: 15px;
+    }
+
+    .nav-button {
+        padding: 10px 18px;
+        font-size: 12px;
+    }
+
+    .gallery-item {
+        width: 150px;
+        padding: 15px;
+    }
+
+    .gallery-item img {
+        height: 150px;
+        width: 150px;
+    }
+}
+

@@ -17,6 +17,7 @@ import Members from "@/components/Members";
 import Testimonials from "@/components/Testimonials";
 import BookToor from "@/components/BookToor";
 import {motion} from 'framer-motion';
+import BookToorModal from "@/components/BookToorModal";
 
 gsap.registerPlugin(ScrollTrigger);
 

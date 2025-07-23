@@ -1,14 +1,24 @@
 // app/ClientLayout.tsx
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DomLoader from '@/components/DomLoader';
 import MouseFollower from '@/components/MouseFollower';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import BookToorModal from '@/components/BookToorModal';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const [loadingComplete, setLoadingComplete] = useState(false);
+  const [isTourModalOpen, setIsTourModalOpen] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsTourModalOpen(true);
+    }, 10000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -17,7 +27,8 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       ) : (
         <>
           <MouseFollower />
-          <Navbar />
+          <Navbar onBookTourClick={() => setIsTourModalOpen(true)} />
+          <BookToorModal isOpen={isTourModalOpen} setIsOpen={setIsTourModalOpen} />
           <main className="pt-20">{children}</main>
           <Footer />
         </>
