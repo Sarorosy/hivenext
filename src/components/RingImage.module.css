@@ -26,31 +26,31 @@
 
 /* Positioning 9 sides in a ring using rotateY + translateZ */
 .gallery_box_in:nth-child(1) {
-  transform: rotateY(0deg) translateZ(var(--z-depth, 450px));
+  transform: rotateY(0deg) translateZ(var(--z-depth, 420px));
 }
 .gallery_box_in:nth-child(2) {
-  transform: rotateY(40deg) translateZ(var(--z-depth, 450px));
+  transform: rotateY(40deg) translateZ(var(--z-depth, 420px));
 }
 .gallery_box_in:nth-child(3) {
-  transform: rotateY(80deg) translateZ(var(--z-depth, 450px));
+  transform: rotateY(80deg) translateZ(var(--z-depth, 420px));
 }
 .gallery_box_in:nth-child(4) {
-  transform: rotateY(120deg) translateZ(var(--z-depth, 450px));
+  transform: rotateY(120deg) translateZ(var(--z-depth, 420px));
 }
 .gallery_box_in:nth-child(5) {
-  transform: rotateY(160deg) translateZ(var(--z-depth, 450px));
+  transform: rotateY(160deg) translateZ(var(--z-depth, 420px));
 }
 .gallery_box_in:nth-child(6) {
-  transform: rotateY(200deg) translateZ(var(--z-depth, 450px));
+  transform: rotateY(200deg) translateZ(var(--z-depth, 420px));
 }
 .gallery_box_in:nth-child(7) {
-  transform: rotateY(240deg) translateZ(var(--z-depth, 450px));
+  transform: rotateY(240deg) translateZ(var(--z-depth, 420px));
 }
 .gallery_box_in:nth-child(8) {
-  transform: rotateY(280deg) translateZ(var(--z-depth, 450px));
+  transform: rotateY(280deg) translateZ(var(--z-depth, 420px));
 }
 .gallery_box_in:nth-child(9) {
-  transform: rotateY(320deg) translateZ(var(--z-depth, 450px));
+  transform: rotateY(320deg) translateZ(var(--z-depth, 420px));
 }
 
 /* Responsive adjustments */

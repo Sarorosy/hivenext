@@ -100,7 +100,7 @@ export default function Footer() {
             <div className="mt-16 border-t border-white/10 pt-6 text-sm text-center text-gray-500">
                 <p>© 2023 The Hive. All rights reserved.</p>
                 <p className="mt-1">
-                    Developed by <span className="text-white font-semibold">Saravanan</span>
+                    Developed by <span className="text-white font-semibold">Hive Team</span>
                 </p>
             </div>
         </footer>
