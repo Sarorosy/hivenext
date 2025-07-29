@@ -137,3 +137,30 @@ body{
 .cstd{
   font-family: 'CircularStd' , sans-serif;
 }
+
+.itali{
+  font-family: 'Italiana', sans-serif;
+}
+.eb{
+  font-family: 'EB Garamond', sans-serif;
+  font-style: italic;
+}
+
+.eb-regular{
+  font-family: 'EB Garamond', sans-serif;
+}
+.c{
+  font-family: 'Montserrat', sans-serif;
+}
+.noto{
+  font-family: "Noto Serif Display", serif;
+}
+.romantica{
+  font-family: "Italianno", serif;
+}
+.elegance{
+  font-family: 'Dancing Script', serif;
+}
+.elegance{
+  font-family: 'Dancing Script', serif;
+}

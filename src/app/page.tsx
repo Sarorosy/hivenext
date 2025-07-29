@@ -19,6 +19,7 @@ import Testimonials from "@/components/Testimonials";
 import BookToor from "@/components/BookToor";
 import { motion } from "framer-motion";
 import BookToorModal from "@/components/BookToorModal";
+import StatsBanner from "@/components/StatsBanner";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -119,6 +120,7 @@ export default function Home() {
 
       <RingImage />
       <FlexDescription />
+      <StatsBanner />
 
       <div className="relative flex w-full min-h-[450px] items-start justify-center overflow-hidden rounded-lg border bg-background px-40 pb-40 pt-8 md:pb-60 mt-8">
         <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-7xl md:text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">

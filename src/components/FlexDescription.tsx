@@ -80,7 +80,7 @@ export default function FlexDescription() {
   }, []);
 
   return (
-    <section ref={container} className="flex flex-col gap-8 md:gap-12 py-16 items-center relative h-[500px]">
+    <section ref={container} className="flex flex-col gap-8 md:gap-12 py-16 items-center relative ">
       <InteractiveGridPattern
         className={cn(
           "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
@@ -92,7 +92,7 @@ export default function FlexDescription() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="text-3xl font-bold mb-8 text-center"
+        className="text-3xl font-bold mb-8 text-center eb-regular"
       >
         Why Choose The Hive?
       </motion.h2>
