@@ -125,7 +125,7 @@ const Navbar: React.FC<NavbarProps> = ({ onBookTourClick }) => {
               {workspacesOpen && (
                 <div className="absolute left-0 top-7 mt-2 w-96 bg-black text-white rounded-sm z-20">
                   <div className="absolute top-0 left-1 -translate-y-full w-0 h-0 border-l-[10px] border-r-[10px] border-b-[20px] border-l-transparent border-r-transparent border-b-black"></div>
-                  
+                  <div className="absolute top-0 left-5 -translate-y-full w-full h-0  border-b-[20px] opacity-0 bg-transparent z-19"></div>
                   <div className="flex">
                     {/* Left side - Offering Types */}
                     <div className="w-1/2 p-4 border-r border-gray-600">
@@ -182,6 +182,7 @@ const Navbar: React.FC<NavbarProps> = ({ onBookTourClick }) => {
               {centresOpen && (
                 <div className="absolute left-0 top-7 mt-2 w-96 bg-black text-white rounded-sm z-20">
                   <div className="absolute top-0 left-1 -translate-y-full w-0 h-0 border-l-[10px] border-r-[10px] border-b-[20px] border-l-transparent border-r-transparent border-b-black"></div>
+                  <div className="absolute top-0 left-5 -translate-y-full w-full h-0  border-b-[20px] opacity-0 bg-transparent z-19"></div>
                   
                   <div className="flex">
                     {/* Left side - Cities */}
