@@ -121,7 +121,7 @@ const BookToor: React.FC = () => {
 
         {/* Form */}
         <form
-          onSubmit={handleSubmit}
+          
           className="bg-white p-8 rounded-3xl shadow-xl space-y-6 border border-gray-100 animate-fadeIn"
         >
           <h2 className="text-3xl font-bold text-gray-800 mb-2">
@@ -213,11 +213,13 @@ const BookToor: React.FC = () => {
           </div>
 
           <button
-            type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition-all duration-200"
-          >
-            Submit
-          </button>
+  type="button"
+  onClick={handleSubmit}
+  className="w-full bg-gradient-to-r from-yellow-400 via-yellow-400 to-yellow-500  text-white py-3 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+>
+  Submit
+</button>
+
         </form>
       </div>
     </div>

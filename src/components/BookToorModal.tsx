@@ -135,7 +135,6 @@ const BookToorModal: React.FC<BookToorModalProps> = ({ isOpen, setIsOpen }) => {
 
           {/* Form */}
           <form
-            onSubmit={handleSubmit}
             className="space-y-5"
           >
             <h2 className="text-2xl font-bold text-gray-800">
@@ -228,8 +227,9 @@ const BookToorModal: React.FC<BookToorModalProps> = ({ isOpen, setIsOpen }) => {
             </div>
 
             <button
-              type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition-all duration-200"
+              type="button"
+              onClick={handleSubmit}
+              className="w-full bg-gradient-to-r from-yellow-400 via-yellow-400 to-yellow-500  text-white py-3 rounded-xl font-semibold transition-all duration-200"
             >
               Submit
             </button>
