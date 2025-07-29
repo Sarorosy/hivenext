@@ -105,7 +105,7 @@ export default function Home() {
         className="w-full h-screen overflow-hidden mt-2"
       >
         <img
-          src="/DSC07671.jpg"
+          src="/DSC07671.JPG"
           alt="Hero Image"
           className="w-[99%] mx-auto h-full object-cover rounded-xl shadow-2xl"
         />
