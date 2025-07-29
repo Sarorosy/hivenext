@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Lenis from "@studio-freight/lenis";
 
 import Branches from "@/components/Branches";
 import FlexDescription from "@/components/FlexDescription";
@@ -16,7 +17,7 @@ import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import Members from "@/components/Members";
 import Testimonials from "@/components/Testimonials";
 import BookToor from "@/components/BookToor";
-import {motion} from 'framer-motion';
+import { motion } from "framer-motion";
 import BookToorModal from "@/components/BookToorModal";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -27,6 +28,25 @@ export default function Home() {
   const postGeminiRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const lenis = new Lenis({
+      lerp: 0.1, // Smoothness, from 0 to 1 — lower is smoother
+      wheelMultiplier: 1, // Sensitivity
+      touchMultiplier: 1.5, // Mobile scroll sensitivity
+      duration: 1.2, // Optional fixed duration mode (0 disables it)
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // custom easing
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // 🧩 Sync GSAP ScrollTrigger with Lenis scroll
+    lenis.on("scroll", ScrollTrigger.update);
+    ScrollTrigger.refresh();
+
     if (!containerScrollRef.current || !postGeminiRef.current) return;
 
     const blackTrigger = ScrollTrigger.create({
@@ -71,26 +91,25 @@ export default function Home() {
     return () => {
       blackTrigger.kill();
       whiteTrigger.kill();
+      lenis.destroy(); // cleanup
     };
   }, []);
-
-
 
   return (
     <>
       <SlideText word="We do social space" />
-     <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.2, ease: "easeOut" }}
-      className="w-full h-screen overflow-hidden mt-2"
-    >
-      <img
-        src="/hero2.jpg"
-        alt="Hero Image"
-        className="w-[99%] mx-auto h-full object-cover rounded-xl shadow-2xl"
-      />
-    </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        className="w-full h-screen overflow-hidden mt-2"
+      >
+        <img
+          src="/hero2.jpg"
+          alt="Hero Image"
+          className="w-[99%] mx-auto h-full object-cover rounded-xl shadow-2xl"
+        />
+      </motion.div>
 
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
         <VelocityScroll>Flexible Workspace Solutions |</VelocityScroll>
@@ -132,10 +151,8 @@ export default function Home() {
             />
           </div>
         </ContainerScroll>
-
       </div>
       <GoogleGeminiEffectDemo />
-
 
       <div
         ref={postGeminiRef}
@@ -150,7 +167,8 @@ export default function Home() {
             </PointerHighlight>
           </h2>
           <p className="mt-6 text-lg text-gray-600">
-            Looking for <span className="font-semibold">Hot/Dedicated Desks</span>?
+            Looking for{" "}
+            <span className="font-semibold">Hot/Dedicated Desks</span>?
           </p>
 
           <button className="mt-6 inline-block bg-black text-white px-4 py-2 rounded-full font-medium hover:bg-blue-700 transition">
@@ -170,7 +188,6 @@ export default function Home() {
       <Members />
       <Testimonials />
       <BookToor />
-
     </>
   );
 }
