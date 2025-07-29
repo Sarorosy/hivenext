@@ -125,12 +125,6 @@ body{
   overflow-x: hidden;
 }
 
-html,
-body {
-  overflow: hidden;
-  height: 100%;
-}
-
 
 
 @font-face {
