@@ -105,11 +105,12 @@ export default function Home() {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="w-full h-screen overflow-hidden mt-2"
       >
-        <img
-          src="/DSC07671.JPG"
-          alt="Hero Image"
-          className="w-[99%] mx-auto h-full object-cover rounded-xl shadow-2xl"
-        />
+         <img
+    src="/DSC07671.JPG"
+    alt="Hero Image"
+    className="w-[95%] mx-auto h-full object-cover rounded-xl shadow-xl scale-[0.98]"
+    loading="lazy"
+  />
       </motion.div>
 
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
@@ -166,9 +167,8 @@ export default function Home() {
             The best way to grow is to{" "}
             <PointerHighlight>
               <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 text-transparent bg-clip-text animate-shimmer font-semibold">
-  collaborate
-</span>
-
+                collaborate
+              </span>
             </PointerHighlight>
           </h2>
           <p className="mt-6 text-lg text-gray-600">

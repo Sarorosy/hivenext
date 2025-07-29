@@ -165,33 +165,6 @@ const Members = () => {
           </div>
         </motion.div>
 
-        {/* Enhanced bottom decorative elements */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-20 text-center"
-        >
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-white/80 to-gray-50/80 backdrop-blur-sm rounded-full shadow-lg border border-white/50 cursor-pointer"
-          >
-            <div className="relative">
-              <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-pulse" />
-              <div className="absolute inset-0 w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-ping opacity-20" />
-            </div>
-            <span className="text-gray-700 font-semibold tracking-wide">
-              Growing Community
-            </span>
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              className="text-gray-400"
-            >
-              ✨
-            </motion.div>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
