@@ -90,7 +90,7 @@ export function PointerHighlight({
             }}
           >
             <Pointer
-              className={cn("h-5 w-5 text-blue-500", pointerClassName)}
+              className={cn("h-5 w-5 text-yellow-400  animate-shimmer", pointerClassName)}
             />
           </motion.div>
         </motion.div>

@@ -165,7 +165,10 @@ export default function Home() {
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900 leading-tight">
             The best way to grow is to{" "}
             <PointerHighlight>
-              <span className="text-blue-600">collaborate</span>
+              <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 text-transparent bg-clip-text animate-shimmer font-semibold">
+  collaborate
+</span>
+
             </PointerHighlight>
           </h2>
           <p className="mt-6 text-lg text-gray-600">
