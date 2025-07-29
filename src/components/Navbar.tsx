@@ -107,8 +107,8 @@ const Navbar: React.FC<NavbarProps> = ({ onBookTourClick }) => {
           </Link>
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-black ml-8">
-            <Link href="/offerings" className="hover:underline">
-              Offerings
+            <Link href="/about" className="hover:underline">
+              About Us
             </Link>
 
             {/* WorkSpaces Dropdown */}
