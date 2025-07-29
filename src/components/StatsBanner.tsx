@@ -30,10 +30,11 @@ const StatsBanner = () => {
         target="_blank"
         className="bg-gradient-to-r from-gray-900 to-gray-800 border border-white/20 rounded-tl-[25px] rounded-br-[25px] px-6 py-3 flex items-center gap-4 hover:scale-105 transition-transform"
       >
-        <span className="bg-white text-black font-semibold px-4 py-2 rounded-tl-[15px] rounded-br-[15px] text-sm">
+        
+        <span className="text-sm opacity-90 flex items-center gap-1">
+          <span className="bg-white text-black font-semibold px-4 py-2 rounded-tl-[15px] rounded-br-[15px] text-sm">
           JOIN US NOW
         </span>
-        <span className="text-sm opacity-80 flex items-center gap-1">
            <ArrowUpRight className="w-4 h-4" />
         </span>
       </Link>
