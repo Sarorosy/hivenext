@@ -61,7 +61,7 @@ const SlideText = ({ word = "Animated Text" }: SlideTextProps) => {
         dominantBaseline="middle"
         x="250"
         y="25"
-        fontSize="36"
+        fontSize="30"
         fill="black"
       >
         {word}
@@ -75,7 +75,7 @@ const SlideText = ({ word = "Animated Text" }: SlideTextProps) => {
           dominantBaseline="middle"
           x="250"
           y="25"
-          fontSize="36"
+          fontSize="30"
           fill="white"
         >
           {word}

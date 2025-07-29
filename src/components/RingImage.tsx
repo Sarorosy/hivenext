@@ -127,7 +127,7 @@ const RingImage = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <p className="text-xl md:text-2xl leading-tight cstd">
+          <p className="text-xl md:text-2xl leading-normal font-light cstd">
             The Hive offers premium, managed workspaces designed for startups to
             enterprises, blending flexibility, modern amenities, and a
             community-driven approach. With locations across India, each space

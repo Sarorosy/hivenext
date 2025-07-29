@@ -404,10 +404,11 @@ const Navbar: React.FC<NavbarProps> = ({ onBookTourClick }) => {
         statusMessage="Typically replies in minutes"
         chatMessage="Hi 👋! How can we help?"
         placeholder="Type your message here..."
-        allowClickAway
+        allowClickAway={false}
         notification
         notificationSound
         darkMode={false}
+        allowEsc={false}   
       />
     </header>
   );
