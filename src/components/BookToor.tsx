@@ -64,8 +64,8 @@ const BookToor: React.FC = () => {
 
   return (
     <div
-    id="contactForm"
-    className="min-h-screen bg-gradient-to-br from-white to-blue-50 px-4 py-14 md:px-10 relative overflow-hidden z-10">
+      id="contactForm"
+      className="min-h-screen bg-gradient-to-br from-white to-blue-50 px-4 py-14 md:px-10 relative overflow-hidden z-10">
       <DotPattern
         width={20}
         height={20}
@@ -90,13 +90,13 @@ const BookToor: React.FC = () => {
 
           <div className="space-y-4 text-gray-700">
             <div className="flex items-center gap-3">
-              <Phone className="text-blue-600" />
+              <Phone className="btn-77 p-1" />
               <a href="tel:+917022274000" className="hover:underline">
                 +91-70222 74000
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <Mail className="text-blue-600" />
+              <Mail className="btn-77 p-1" />
               <a
                 href="mailto:hello@hiveworkspaces.com"
                 className="hover:underline"
@@ -121,7 +121,7 @@ const BookToor: React.FC = () => {
 
         {/* Form */}
         <form
-          
+
           className="bg-white p-8 rounded-3xl shadow-xl space-y-6 border border-gray-100 animate-fadeIn"
         >
           <h2 className="text-3xl font-bold text-gray-800 mb-2">
@@ -213,12 +213,12 @@ const BookToor: React.FC = () => {
           </div>
 
           <button
-  type="button"
-  onClick={handleSubmit}
-  className="w-full bg-gradient-to-r from-yellow-400 via-yellow-400 to-yellow-500  text-white py-3 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300"
->
-  Submit
-</button>
+            type="button"
+            onClick={handleSubmit}
+            className="w-full btn-69 py-3 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+          >
+            Submit
+          </button>
 
         </form>
       </div>

@@ -98,7 +98,7 @@ export default function Home() {
 
   return (
     <>
-      <SlideText word="Elevate where you work" />
+      <SlideText word="Elevate Where You Work" />
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -166,7 +166,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900 leading-tight">
             The best way to grow is to{" "}
             <PointerHighlight>
-              <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 text-transparent bg-clip-text animate-shimmer font-semibold">
+              <span className="text-gold animate-shimmer font-semibold">
                 collaborate
               </span>
             </PointerHighlight>

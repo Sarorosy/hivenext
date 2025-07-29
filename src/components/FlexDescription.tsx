@@ -35,7 +35,7 @@ function Button({ children, ...props }: PropsWithChildren<HTMLAttributes<HTMLBut
   return (
     <button
       {...props}
-      className="mt-10 px-6 py-3 rounded bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-400 text-orange-100 font-medium shadow-md hover:brightness-110 transition cursor-pointer"
+      className="mt-10 px-6 py-3 rounded btn-69 font-medium shadow-md hover:brightness-110 transition cursor-pointer"
     >
       <SparklesText>
         {children}

@@ -104,13 +104,13 @@ const BookToorModal: React.FC<BookToorModalProps> = ({ isOpen, setIsOpen }) => {
 
             <div className="space-y-2 text-gray-700">
               <div className="flex items-center gap-3">
-                <Phone className="text-blue-600" />
+                <Phone className="btn-77 p-1" />
                 <a href="tel:+917022274000" className="hover:underline">
                   +91-70222 74000
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="text-blue-600" />
+                <Mail className="btn-77 p-1" />
                 <a
                   href="mailto:hello@hiveworkspaces.com"
                   className="hover:underline"
@@ -229,7 +229,7 @@ const BookToorModal: React.FC<BookToorModalProps> = ({ isOpen, setIsOpen }) => {
             <button
               type="button"
               onClick={handleSubmit}
-              className="w-full bg-gradient-to-r from-yellow-400 via-yellow-400 to-yellow-500  text-white py-3 rounded-xl font-semibold transition-all duration-200"
+              className="w-full btn-69 py-3 rounded-xl font-semibold transition-all duration-200"
             >
               Submit
             </button>

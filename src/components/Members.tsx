@@ -43,19 +43,19 @@ const Members = () => {
           className="text-center mb-20"
         >
           <motion.div
-  initial={{ scale: 0.9 }}
-  animate={{ scale: isVisible ? 1 : 0.9 }}
-  transition={{ duration: 0.6, delay: 0.2 }}
-  className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-100 00 rounded-full mb-6"
->
-  <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse" />
-  <span className="text-sm font-medium bg-gradient-to-r from-yellow-600 via-orange-600 to-yellow-600 bg-clip-text text-transparent animate-shimmer">
-    Trusted Partners
-  </span>
-</motion.div>
+            initial={{ scale: 0.9 }}
+            animate={{ scale: isVisible ? 1 : 0.9 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="inline-flex items-center gap-2 px-4 py-2  btn-77 mx-auto rounded-full mb-6"
+          >
+            <div className="w-2 h-2 bg-brownn rounded-full animate-pulse" />
+            <span className="text-sm font-medium  animate-shimmer ">
+              Trusted Partners
+            </span>
+          </motion.div>
 
 
-          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent mb-6 leading-tight animate-shimmer">
+          <h2 className="text-5xl md:text-6xl font-bold text-gold mb-6 leading-tight animate-shimmer">
             Our Members
           </h2>
           <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">

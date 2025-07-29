@@ -49,7 +49,7 @@ const StatsBanner = () => {
         </div>
         <div>
           <p className="text-xl md:text-2xl font-bold">
-            <Counter end={100} />{" "}
+            <Counter end={10000} />{" "}
           </p>
           <p className="opacity-80">Workstations</p>
         </div>
