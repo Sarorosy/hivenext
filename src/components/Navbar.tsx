@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Calendar, User, Phone, Menu, X } from "lucide-react";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 interface NavbarProps {
   onBookTourClick: () => void;
@@ -13,9 +14,12 @@ const Navbar: React.FC<NavbarProps> = ({ onBookTourClick }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
   const [centresOpen, setCentresOpen] = useState(false);
+  const [workspacesOpen, setWorkspacesOpen] = useState(false);
   const [hoveredCity, setHoveredCity] = useState<string>("");
+  const [hoveredOffering, setHoveredOffering] = useState<string>("");
   const infoRef = useRef<HTMLDivElement | null>(null);
   const centresRef = useRef<HTMLDivElement | null>(null);
+  const workspacesRef = useRef<HTMLDivElement | null>(null);
 
   // City to branches mapping
   const cityBranches = {
@@ -36,6 +40,37 @@ const Navbar: React.FC<NavbarProps> = ({ onBookTourClick }) => {
     ]
   };
 
+  // Offerings data
+  const offerings = [
+    {
+      icon: "/icons/office.svg",
+      title: "Office Spaces",
+      subtitle: "Ready-to-move-in or customisable private offices",
+      items: [
+        "Managed Offices",
+        "Enterprise Solutions",
+        "Private Cabins",
+      ],
+    },
+    {
+      icon: "/icons/coworking.svg",
+      title: "Coworking Spaces",
+      subtitle: "Coworking spaces for the hour, day, or month",
+      items: [
+        "Dedicated Desks",
+        "Hot Desks",
+      ],
+    },
+    {
+      icon: "/icons/additional.svg",
+      title: "Additional Solutions",
+      subtitle: "Solutions that go beyond workspaces",
+      items: [
+        "Meetings & Event Spaces",
+      ],
+    },
+  ];
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (infoRef.current && !infoRef.current.contains(event.target as Node)) {
@@ -44,6 +79,10 @@ const Navbar: React.FC<NavbarProps> = ({ onBookTourClick }) => {
       if (centresRef.current && !centresRef.current.contains(event.target as Node)) {
         setCentresOpen(false);
         setHoveredCity("");
+      }
+      if (workspacesRef.current && !workspacesRef.current.contains(event.target as Node)) {
+        setWorkspacesOpen(false);
+        setHoveredOffering("");
       }
     };
 
@@ -71,6 +110,63 @@ const Navbar: React.FC<NavbarProps> = ({ onBookTourClick }) => {
             <Link href="/offerings" className="hover:underline">
               Offerings
             </Link>
+
+            {/* WorkSpaces Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setWorkspacesOpen(true)}
+              onMouseLeave={() => {
+                setWorkspacesOpen(false);
+                setHoveredOffering("");
+              }}
+              ref={workspacesRef}
+            >
+              <span className="hover:underline cursor-pointer">WorkSpaces</span>
+              {workspacesOpen && (
+                <div className="absolute left-0 top-7 mt-2 w-96 bg-black text-white rounded-sm z-20">
+                  <div className="absolute top-0 left-1 -translate-y-full w-0 h-0 border-l-[10px] border-r-[10px] border-b-[20px] border-l-transparent border-r-transparent border-b-black"></div>
+                  
+                  <div className="flex">
+                    {/* Left side - Offering Types */}
+                    <div className="w-1/2 p-4 border-r border-gray-600">
+                      <h3 className="text-xs uppercase tracking-wide text-gray-300 mb-3">Workspace Types</h3>
+                      {offerings.map((offering) => (
+                        <div
+                          key={offering.title}
+                          className={`py-2 px-2 cursor-pointer hover:bg-gray-800 rounded transition-colors ${
+                            hoveredOffering === offering.title ? 'bg-gray-800' : ''
+                          }`}
+                          onMouseEnter={() => setHoveredOffering(offering.title)}
+                        >
+                          <div className="font-medium">{offering.title}</div>
+                          <div className="text-xs text-gray-400 mt-1">{offering.subtitle}</div>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    {/* Right side - Items */}
+                    <div className="w-1/2 p-4">
+                      <h3 className="text-xs uppercase tracking-wide text-gray-300 mb-3">Options</h3>
+                      {hoveredOffering && offerings.find(o => o.title === hoveredOffering) ? (
+                        <div className="space-y-2">
+                          {offerings.find(o => o.title === hoveredOffering)?.items.map((item, index) => (
+                            <Link
+                              key={index}
+                              href={`/workspaces/${item.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+                              className="block py-1 px-2 hover:bg-gray-800 rounded text-sm transition-colors"
+                            >
+                              {item}
+                            </Link>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="text-gray-400 text-sm">Hover over a workspace type to see options</div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* Centres Dropdown */}
             <div
@@ -196,6 +292,35 @@ const Navbar: React.FC<NavbarProps> = ({ onBookTourClick }) => {
             Offerings
           </Link>
 
+          {/* WorkSpaces in mobile - Click to toggle */}
+          <div className="space-y-2">
+            <button
+              onClick={() => setWorkspacesOpen(!workspacesOpen)}
+              className="block w-full text-left hover:underline"
+            >
+              WorkSpaces
+            </button>
+            {workspacesOpen && (
+              <div className="pl-4 space-y-2 text-sm">
+                {offerings.map((offering) => (
+                  <div key={offering.title} className="space-y-1">
+                    <div className="font-medium text-gray-700">{offering.title}</div>
+                    <div className="text-xs text-gray-500 mb-1">{offering.subtitle}</div>
+                    {offering.items.map((item, index) => (
+                      <Link
+                        key={index}
+                        href={`/workspaces/${item.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+                        className="block pl-2 hover:underline text-gray-600"
+                      >
+                        {item}
+                      </Link>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
           {/* Centres in mobile - Click to toggle */}
           <div className="space-y-2">
             <button
@@ -270,6 +395,19 @@ const Navbar: React.FC<NavbarProps> = ({ onBookTourClick }) => {
           </a>
         </div>
       )}
+
+      <FloatingWhatsApp
+        phoneNumber="918072075487"
+        accountName="The Hive"
+        avatar="/Hive-Favicon.png"
+        statusMessage="Typically replies in minutes"
+        chatMessage="Hi 👋! How can we help?"
+        placeholder="Type your message here..."
+        allowClickAway
+        notification
+        notificationSound
+        darkMode={false}
+      />
     </header>
   );
 };

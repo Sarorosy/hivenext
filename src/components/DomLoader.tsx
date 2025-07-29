@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const words = [
-  "Architects.",
-  "Graphic Designers.",
-  "Interior Designers.",
-  "Model Makers.",
-  "Project Managers.",
-  "Retail Planners.",
+  "Customized Workspaces.",
+  "Private cabins.",
+  "Dedicated Desks.",
+  "Hot Desks.",
+  "Enterprise Solutions.",
+  "Meeting Rooms."
 ];
 
 interface DomLoaderProps {
@@ -84,7 +84,7 @@ const DomLoader: React.FC<DomLoaderProps> = ({ onComplete }) => {
                   layout
                   transition={{ duration: 0.6, ease: "easeInOut" }}
                 >
-                  <span className="whitespace-nowrap">We are</span>
+                  <span className="whitespace-nowrap">Looking For</span>
                   <div className="relative inline-block">
                     <AnimatePresence mode="wait">
                       <motion.span

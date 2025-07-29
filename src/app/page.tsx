@@ -97,7 +97,7 @@ export default function Home() {
 
   return (
     <>
-      <SlideText word="We do social space" />
+      <SlideText word="Elevate Where You Work" />
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -105,7 +105,7 @@ export default function Home() {
         className="w-full h-screen overflow-hidden mt-2"
       >
         <img
-          src="/hero2.jpg"
+          src="/DSC07671.jpg"
           alt="Hero Image"
           className="w-[99%] mx-auto h-full object-cover rounded-xl shadow-2xl"
         />
