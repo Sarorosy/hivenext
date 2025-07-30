@@ -1,4 +1,3 @@
-// src/app/workspaces/[slug]/page.tsx
 import { notFound } from "next/navigation";
 
 const offerings = [
@@ -34,13 +33,12 @@ function getWorkspaceData(slug: string) {
   return null;
 }
 
-interface WorkspacePageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default async function WorkspacePage({ params }: WorkspacePageProps) {
+// ✅ Don’t use any imported or custom PageProps type
+export default function WorkspacePage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const workspace = getWorkspaceData(params.slug);
 
   if (!workspace) {
