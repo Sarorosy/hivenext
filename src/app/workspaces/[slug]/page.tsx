@@ -1,5 +1,4 @@
 // src/app/workspaces/[slug]/page.tsx
-
 import { notFound } from "next/navigation";
 
 const offerings = [
@@ -35,16 +34,17 @@ function getWorkspaceData(slug: string) {
   return null;
 }
 
-// ✅ Correctly typed App Router page function
-export default function WorkspacePage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+interface WorkspacePageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default async function WorkspacePage({ params }: WorkspacePageProps) {
   const workspace = getWorkspaceData(params.slug);
 
   if (!workspace) {
-    notFound(); // triggers 404 page
+    notFound();
   }
 
   return (
