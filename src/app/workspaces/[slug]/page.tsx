@@ -1,15 +1,9 @@
-// app/workspaces/[slug]/page.tsx
-
 import { notFound } from "next/navigation";
 
 const offerings = [
   {
     title: "Office Spaces",
-    items: [
-      "Managed Offices",
-      "Enterprise Solutions",
-      "Private Cabins",
-    ],
+    items: ["Managed Offices", "Enterprise Solutions", "Private Cabins"],
   },
   {
     title: "Coworking Spaces",
@@ -39,18 +33,24 @@ function getWorkspaceData(slug: string) {
   return null;
 }
 
-export default function WorkspacePage({ params }: { params: { slug: string } }) {
+// ✅ Add proper type for the props
+interface WorkspacePageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default function WorkspacePage({ params }: WorkspacePageProps) {
   const workspace = getWorkspaceData(params.slug);
 
   if (!workspace) {
-    return notFound(); // show 404 if slug is invalid
+    notFound();
   }
 
   return (
     <div className="p-10">
       <h1 className="text-3xl font-bold">{workspace.title}</h1>
       <p className="text-gray-600 mt-2">Category: {workspace.category}</p>
-      {/* Add more dynamic content here as needed */}
     </div>
   );
 }
