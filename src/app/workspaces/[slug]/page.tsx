@@ -1,3 +1,4 @@
+// src/app/workspaces/[slug]/page.tsx
 import { notFound } from "next/navigation";
 
 const offerings = [
@@ -33,7 +34,7 @@ function getWorkspaceData(slug: string) {
   return null;
 }
 
-// ✅ Don’t use any imported or custom PageProps type
+// ✅ No external PageProps type — just inline it directly here
 export default function WorkspacePage({
   params,
 }: {
