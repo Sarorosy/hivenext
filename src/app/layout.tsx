@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "The Hive | Shared Workspaces and Offices for Rent",
   description: "Rent meeting rooms & shared workspaces near you. Flexible hourly & daily plans available",
+  icons: {
+    icon: "/favicon.png", // This overrides default Vercel favicon
+  },
 };
 
 export default function RootLayout({
