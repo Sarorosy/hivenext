@@ -1,5 +1,6 @@
 // src/app/workspaces/[slug]/page.tsx
 import { notFound } from "next/navigation";
+import type { Metadata } from "next"; // Optional if you use generateMetadata
 
 const offerings = [
   {
@@ -34,12 +35,14 @@ function getWorkspaceData(slug: string) {
   return null;
 }
 
-// ✅ No external PageProps type — just inline it directly here
-export default function WorkspacePage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+// ✅ Define correct prop type
+interface WorkspacePageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default function WorkspacePage({ params }: WorkspacePageProps) {
   const workspace = getWorkspaceData(params.slug);
 
   if (!workspace) {
