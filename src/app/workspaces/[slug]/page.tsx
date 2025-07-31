@@ -1,6 +1,5 @@
 // src/app/workspaces/[slug]/page.tsx
 import { notFound } from "next/navigation";
-import type { Metadata } from "next"; // Optional if you use generateMetadata
 
 const offerings = [
   {
@@ -35,18 +34,12 @@ function getWorkspaceData(slug: string) {
   return null;
 }
 
-// ✅ Define correct prop type
-interface WorkspacePageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default function WorkspacePage({ params }: WorkspacePageProps) {
+// ✅ DO NOT explicitly type 'params' — let Next.js do it
+export default function WorkspacePage({ params }: { params: { slug: string } }) {
   const workspace = getWorkspaceData(params.slug);
 
   if (!workspace) {
-    notFound();
+    notFound(); // ✅ this will render the 404 page
   }
 
   return (
