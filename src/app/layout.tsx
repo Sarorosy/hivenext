@@ -34,7 +34,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=EB+Garamond&family=Montserrat&family=Italianno&family=Italiana&family=Playfair+Display&family=Noto+Serif+Display&display=swap"
           rel="stylesheet"
         />
-        <link rel="shortcut icon" href="/Hive-Favicon.png" type="image/png" />
+        <link rel="icon" href="/Hive-Favicon.png" type="image/png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
