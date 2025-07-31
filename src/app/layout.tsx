@@ -19,8 +19,11 @@ export const metadata: Metadata = {
   title: "The Hive | Shared Workspaces and Offices for Rent",
   description: "Rent meeting rooms & shared workspaces near you. Flexible hourly & daily plans available",
   icons: {
-    icon: "/favicon.png", // This overrides default Vercel favicon
-  },
+  icon: "/favicon.png",
+  shortcut: "/favicon.png",
+  apple: "/favicon.png",
+},
+
 };
 
 export default function RootLayout({
@@ -37,7 +40,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=EB+Garamond&family=Montserrat&family=Italianno&family=Italiana&family=Playfair+Display&family=Noto+Serif+Display&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" href="/Hive-Favicon.png" type="image/png" />
+        
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
