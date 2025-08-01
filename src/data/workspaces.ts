@@ -314,7 +314,7 @@ export const workspaces: Workspace[] = [
   },
   {
     id: 'meetings-event-spaces',
-    slug: 'meetings-event-spaces',
+    slug: 'meetings-and-event-spaces',
     name: 'Meetings & Event Spaces',
     title: 'The Hive Meetings & Event Spaces',
     description: 'Professional meeting rooms and event venues equipped with cutting-edge technology for presentations, conferences, and corporate events.',
@@ -391,9 +391,17 @@ export const companyInfo = {
   }
 };
 
+const generateSlug = (name: string) =>
+  name
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+
 // Helper function to get workspace by slug
 export const getWorkspaceBySlug = (slug: string): Workspace | undefined => {
-  return workspaces.find(workspace => workspace.slug === slug);
+  return workspaces.find(workspace => generateSlug(workspace.slug) === slug);
 };
 
 // Helper function to get all workspace slugs for static generation
