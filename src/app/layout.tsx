@@ -17,13 +17,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "The Hive | Shared Workspaces and Offices for Rent",
-  description: "Rent meeting rooms & shared workspaces near you. Flexible hourly & daily plans available",
+  description:
+    "Rent meeting rooms & shared workspaces near you. Flexible hourly & daily plans available",
   icons: {
-  icon: "/favicon.png",
-  shortcut: "/favicon.png",
-  apple: "/favicon.png",
-},
-
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -31,8 +31,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-  
   return (
     <html lang="en">
       <head>
@@ -40,7 +38,6 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=EB+Garamond&family=Montserrat&family=Italianno&family=Italiana&family=Playfair+Display&family=Noto+Serif+Display&display=swap"
           rel="stylesheet"
         />
-        
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
