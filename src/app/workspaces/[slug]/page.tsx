@@ -132,16 +132,7 @@ export default function WorkspacePage() {
                   </div>
                   <div className="text-sm text-gray-500">Capacity</div>
                 </div>
-                {workspace.pricing && (
-                  <div className="text-center border-l border-r border-gray-200">
-                    <div className="text-2xl font-bold text-black mb-1">
-                      {formatPrice(workspace.pricing.from)}
-                    </div>
-                    <div className="text-sm text-gray-500">
-                      From /{workspace.pricing.period}
-                    </div>
-                  </div>
-                )}
+                
 
                 <div className="text-center">
                   <div className="text-2xl font-bold text-black mb-1">24/7</div>
@@ -355,30 +346,20 @@ export default function WorkspacePage() {
       {/* Pricing Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-black mb-4">
-            Simple, Transparent Pricing
-          </h2>
+          <h2 className="text-4xl font-bold text-black mb-4">Ready to Get Started?</h2>
           <p className="text-xl text-gray-600 mb-12">
-            Professional workspace solutions that fit your budget
+            Experience the perfect workspace solution tailored for your needs
           </p>
-
+          
           <div className="bg-gray-50 rounded-3xl p-12 max-w-2xl mx-auto">
             <div className="mb-8">
-              <div className="text-5xl font-bold text-black mb-2">
-                {workspace.pricing?.from
-                  ? formatPrice(workspace.pricing.from)
-                  : "Price not available"}
-                {workspace.pricing?.period && (
-                  <span className="text-2xl text-gray-500 font-normal">
-                    /{workspace.pricing.period}
-                  </span>
-                )}
+              <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                <Building className="w-10 h-10 text-white" />
               </div>
-              <p className="text-gray-600">
-                Starting price for {workspace.capacity}
-              </p>
+              <h3 className="text-2xl font-bold text-black mb-4">Flexible Workspace Solutions</h3>
+              <p className="text-gray-600">Capacity: {workspace.capacity}</p>
             </div>
-
+            
             <div className="grid grid-cols-2 gap-6 mb-10 text-left">
               <div className="flex items-center">
                 <Check className="w-5 h-5 text-black mr-3 flex-shrink-0" />
@@ -397,7 +378,7 @@ export default function WorkspacePage() {
                 <span className="text-gray-700">Community events</span>
               </div>
             </div>
-
+            
             <div className="space-y-4">
               <button className="w-full bg-black text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-colors">
                 Get Custom Quote
