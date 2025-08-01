@@ -12,13 +12,13 @@ import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import RingImage from "@/components/RingImage";
 import SlideText from "@/components/SlideText";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { GoogleGeminiEffectDemo } from "@/components/GeminiEffect";
+// import { GoogleGeminiEffectDemo } from "@/components/GeminiEffect";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import Members from "@/components/Members";
 import Testimonials from "@/components/Testimonials";
 import BookToor from "@/components/BookToor";
 import { motion } from "framer-motion";
-import BookToorModal from "@/components/BookToorModal";
+// import BookToorModal from "@/components/BookToorModal";
 import StatsBanner from "@/components/StatsBanner";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -105,12 +105,12 @@ export default function Home() {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="w-full h-screen overflow-hidden mt-2"
       >
-         <img
-    src="/DSC07671.JPG"
-    alt="Hero Image"
-    className="w-[95%] mx-auto h-full object-cover rounded-xl shadow-xl scale-[0.98]"
-    loading="lazy"
-  />
+        <img
+          src="/DSC07671.JPG"
+          alt="Hero Image"
+          className="w-[95%] mx-auto h-full object-cover rounded-xl shadow-xl scale-[0.98]"
+          loading="lazy"
+        />
       </motion.div>
 
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
@@ -155,7 +155,7 @@ export default function Home() {
           </div>
         </ContainerScroll>
       </div>
-      <GoogleGeminiEffectDemo />
+      {/* <GoogleGeminiEffectDemo /> */}
 
       <div
         ref={postGeminiRef}
