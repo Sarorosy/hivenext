@@ -83,6 +83,8 @@ export const workspaces: Workspace[] = [
     name: 'Managed Offices',
     title: 'The Hive Managed Offices',
     description: 'Fully-equipped, ready-to-move-in private office spaces with comprehensive management services for teams of every scale, industry, and stage.',
+    image : "/managedoffices.jpg",
+    image2 : "/offerings/managedoffices/1.jpg",
     features: [
       {
         title: 'Private, lockable with 24/7 access',
@@ -129,6 +131,8 @@ export const workspaces: Workspace[] = [
     slug: 'enterprise-solutions',
     name: 'Enterprise Solutions',
     title: 'The Hive Enterprise Solutions',
+    image : "/enterprisesol2.jpg",
+    image2 : "/offerings/enterprisesolutions/3.jpg",
     description: 'Bespoke workspace solutions designed for large organizations with complex requirements and multi-location needs.',
     features: [
       {
@@ -176,6 +180,8 @@ export const workspaces: Workspace[] = [
     slug: 'private-cabins',
     name: 'Private Cabins',
     title: 'The Hive Private Cabins',
+    image : "/privatecabin.jpg",
+    image2 : "/offerings/privatecabins/2.jpg",
     description: 'Individual private workspaces offering the perfect balance of privacy and community access for entrepreneurs and small teams.',
     features: [
       {
@@ -223,6 +229,8 @@ export const workspaces: Workspace[] = [
     slug: 'dedicated-desks',
     name: 'Dedicated Desks',
     title: 'The Hive Dedicated Desks',
+    image : "/dedidesk.jpg",
+    image2 : "/offerings/dedicateddesks/1.jpg",
     description: 'Your own permanent desk in a shared workspace environment, combining the benefits of a private workspace with community interaction.',
     features: [
       {
@@ -270,6 +278,8 @@ export const workspaces: Workspace[] = [
     slug: 'hot-desks',
     name: 'Hot Desks',
     title: 'The Hive Hot Desks',
+    image : "/hotdesk.jpg",
+    image2 : "/offerings/hotdesks/2.jpg",
     description: 'Flexible workspace solution that allows you to work from any available desk, perfect for those who value variety and spontaneity.',
     features: [
       {
@@ -317,6 +327,8 @@ export const workspaces: Workspace[] = [
     slug: 'meetings-and-event-spaces',
     name: 'Meetings & Event Spaces',
     title: 'The Hive Meetings & Event Spaces',
+    image : "/meeting.jpg",
+    image2 : "/offerings/meetingsandevents/1.jpg",
     description: 'Professional meeting rooms and event venues equipped with cutting-edge technology for presentations, conferences, and corporate events.',
     features: [
       {

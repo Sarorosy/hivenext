@@ -31,6 +31,9 @@ import {
 
 // Import from your data file
 import { workspaces, amenities, getWorkspaceBySlug } from "@/data/workspaces";
+import FAQ from "./Faq";
+import StartWithUs from "./StartWithUs";
+import VirtualTour from "@/components/VirtualTour";
 
 const getAmenityIcon = (iconName: string) => {
   const iconMap: { [key: string]: any } = {
@@ -145,16 +148,12 @@ export default function WorkspacePage() {
                   <Calendar className="w-5 h-5 mr-2" />
                   Schedule a Tour
                 </button>
-                <button className="border-2 border-black text-black px-8 py-4 rounded-lg font-semibold hover:bg-black hover:text-white transition-colors flex items-center justify-center">
-                  <PlayCircle className="w-5 h-5 mr-2" />
-                  Virtual Tour
-                </button>
               </div>
             </div>
 
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop"
+                src={workspace.image || "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop"}
                 alt="Modern workspace"
                 className="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
               />
@@ -162,7 +161,7 @@ export default function WorkspacePage() {
               <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-lg p-4">
                 <div className="flex items-center text-sm font-medium text-gray-900">
                   <MapPin className="w-4 h-4 mr-2" />
-                  68 centers across 8 cities
+                  7 centers across 4 cities
                 </div>
               </div>
             </div>
@@ -334,14 +333,21 @@ export default function WorkspacePage() {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=500&fit=crop"
+                src={workspace.image2 || "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=500&fit=crop"}
                 alt="Benefits workspace"
                 className="w-full h-[500px] object-cover rounded-2xl shadow-xl"
               />
             </div>
           </div>
         </div>
-      </section>
+      </section> 
+
+      {/* Faq */}
+      <FAQ /> 
+
+      {/* Start with Us  */}
+      <StartWithUs /> 
+      <VirtualTour />
 
       {/* Pricing Section */}
       <section className="py-20 bg-white">
@@ -380,9 +386,7 @@ export default function WorkspacePage() {
             </div>
             
             <div className="space-y-4">
-              <button className="w-full bg-black text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-colors">
-                Get Custom Quote
-              </button>
+              
               <button className="w-full border-2 border-black text-black px-8 py-4 rounded-xl font-semibold hover:bg-black hover:text-white transition-colors">
                 Schedule a Tour
               </button>
@@ -391,44 +395,6 @@ export default function WorkspacePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold mb-6">
-            Ready to Transform Your Workspace?
-          </h2>
-          <p className="text-xl text-gray-300 mb-10">
-            Join thousands of professionals who have made The Hive their
-            workspace home.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <button className="bg-white text-black px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center">
-              <Calendar className="w-5 h-5 mr-2" />
-              Book a Tour Today
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-black transition-colors flex items-center justify-center">
-              <Phone className="w-5 h-5 mr-2" />
-              Call Us Now
-            </button>
-          </div>
-
-          <div className="grid sm:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold mb-2">68</div>
-              <div className="text-gray-400">Centers</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">8</div>
-              <div className="text-gray-400">Cities</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">5000+</div>
-              <div className="text-gray-400">Happy Members</div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

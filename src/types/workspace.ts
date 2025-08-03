@@ -18,6 +18,8 @@ export interface Workspace {
   name: string;
   title: string;
   description: string;
+  image: string;
+  image2: string;
   features: WorkspaceFeature[];
   benefits: string[];
   targetAudience: string;

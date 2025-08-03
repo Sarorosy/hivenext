@@ -127,6 +127,10 @@ body {
   overflow-x: hidden;
 }
 
+body::selection{
+  background-color: #000000;
+  color: white;
+}
 
 
 @font-face {
