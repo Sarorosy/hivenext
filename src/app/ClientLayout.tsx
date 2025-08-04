@@ -29,7 +29,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
           <MouseFollower />
           <Navbar onBookTourClick={() => setIsTourModalOpen(true)} />
           <BookToorModal isOpen={isTourModalOpen} setIsOpen={setIsTourModalOpen} />
-          <main className="pt-20">{children}</main>
+          <main className="pt-2">{children}</main>
           <Footer />
         </>
       )}
