@@ -12,7 +12,7 @@ import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import RingImage from "@/components/RingImage";
 import SlideText from "@/components/SlideText";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-// import { GoogleGeminiEffectDemo } from "@/components/GeminiEffect";
+ import { GoogleGeminiEffectDemo } from "@/components/GeminiEffect";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import Members from "@/components/Members";
 import Testimonials from "@/components/Testimonials";
@@ -20,6 +20,7 @@ import BookToor from "@/components/BookToor";
 import { motion } from "framer-motion";
 // import BookToorModal from "@/components/BookToorModal";
 import StatsBanner from "@/components/StatsBanner";
+import Slide from "@/components/Slide";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -98,6 +99,7 @@ export default function Home() {
 
   return (
     <>
+    {/* <Slide /> */}
       <SlideText word="Elevate Where You Work" />
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -155,7 +157,7 @@ export default function Home() {
           </div>
         </ContainerScroll>
       </div>
-      {/* <GoogleGeminiEffectDemo /> */}
+      <GoogleGeminiEffectDemo />
 
       <div
         ref={postGeminiRef}
