@@ -21,6 +21,7 @@ import { motion } from "framer-motion";
 // import BookToorModal from "@/components/BookToorModal";
 import StatsBanner from "@/components/StatsBanner";
 import Slide from "@/components/Slide";
+import HeroTwo from "@/components/HeroTwo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -100,7 +101,7 @@ export default function Home() {
   return (
     <>
     {/* <Slide /> */}
-      <SlideText word="Elevate Where You Work" />
+      {/* <SlideText word="Elevate Where You Work" />
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -113,7 +114,9 @@ export default function Home() {
           className="w-[95%] mx-auto h-full object-cover rounded-xl shadow-xl scale-[0.98]"
           loading="lazy"
         />
-      </motion.div>
+      </motion.div> */}
+      <HeroTwo />
+      
 
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
         <VelocityScroll>Flexible Workspace Solutions |</VelocityScroll>

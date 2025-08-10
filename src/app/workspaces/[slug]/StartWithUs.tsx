@@ -21,7 +21,7 @@ const StartWithUs = () => {
             
             <h3 className="text-xl font-medium text-gray-900 mb-4">Take a tour</h3>
             <p className="text-gray-600 leading-relaxed">
-              Schedule a tour and speak with our representative at one of the WeWork centres in your city
+              Schedule a tour and speak with our representative at one of the Hive centres in your city
             </p>
           </div>
 
