@@ -221,7 +221,7 @@ export default function Slide() {
       ref={containerRef} 
       style={{ 
         width: '100%', 
-        height: '400px', 
+        height: '600px', 
         position: 'relative',
         overflow: 'hidden'
       }} 

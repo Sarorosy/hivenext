@@ -303,4 +303,8 @@ body::selection{
     box-shadow: none;
 }
 
+.slider__inner .js-slider__inner{
+  height: 100%;
+}
+
 

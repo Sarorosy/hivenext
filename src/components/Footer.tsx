@@ -1,9 +1,10 @@
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 export default function Footer() {
     return (
-        <footer className="bg-black text-white py-16 px-6 relative ">
+        <footer className="bg-black text-white py-16 px-6  ">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
                 {/* Logo */}
                 <div>
@@ -103,6 +104,19 @@ export default function Footer() {
                     Developed by <span className="text-white font-semibold">Hive Team</span>
                 </p>
             </div>
+            <FloatingWhatsApp
+        phoneNumber="918072075487"
+        accountName="The Hive"
+        avatar="/Hive-Favicon.png"
+        statusMessage="Typically replies in minutes"
+        chatMessage="Hi 👋! How can we help?"
+        placeholder="Type your message here..."
+        allowClickAway={false}
+        notification
+        notificationSound
+        darkMode={false}
+        allowEsc={false}
+      />
         </footer>
     );
 }

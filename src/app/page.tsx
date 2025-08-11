@@ -99,9 +99,9 @@ export default function Home() {
 
   return (
     <>
-    {/* <Slide /> */}
+    <Slide />
       <SlideText word="Elevate Where You Work" />
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
@@ -113,7 +113,7 @@ export default function Home() {
           className="w-[95%] mx-auto h-full object-cover rounded-xl shadow-xl scale-[0.98]"
           loading="lazy"
         />
-      </motion.div>
+      </motion.div> */}
 
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
         <VelocityScroll>Flexible Workspace Solutions |</VelocityScroll>
