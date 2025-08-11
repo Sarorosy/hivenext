@@ -21,6 +21,7 @@ import { motion } from "framer-motion";
 // import BookToorModal from "@/components/BookToorModal";
 import StatsBanner from "@/components/StatsBanner";
 import Slide from "@/components/Slide";
+import HeroTwo from "@/components/HeroTwo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -99,8 +100,9 @@ export default function Home() {
 
   return (
     <>
-    <Slide />
-      <SlideText word="Elevate Where You Work" />
+    {/* <Slide /> */}
+    <HeroTwo /> 
+      {/* <SlideText word="Elevate Where You Work" /> */}
       {/* <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
